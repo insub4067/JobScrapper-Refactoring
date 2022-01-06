@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+<div class="mt-8">
+    <div class="my-4" style="font-family: Noto Sans Display">{{jobs|length}} jobs has found</div>
+    <table id="table">
+        <thead class="border-b-2 border-gray-800">
+            <tr>
+                <th class="text-left">title</th>
+                <th class="text-left">company</th>
+                <th class="text-left">location</th>
+                <th class="text-left">pay</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs %}
+            <tr class="job" link="{{job.link}}">
+                <td class="td">{{job.title}}</td>
+                <td class="td">{{job.company}}</td>
+                <td class="td">{{job.location}}</td>
+                <td class="td">{{job.pay}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
