@@ -6,9 +6,9 @@
 {% include 'source.html' %}
 <div class="grid grid-cols-5 px-auto mb-24">
     {% for key in keywords %}
-    <a href="search?word={{key.name}}" class="icons">
+    <a href="search?word={{key.name}}" class="icons w-11/12 h-11/12">
         <img src="{{key.img}}" class="images m-6" alt=""></img>
-        <div class="names">{{key.name}}</div>
+        <div class="names opacity-20">{{key.name}}</div>
     </a>
     {% endfor %}
 </div>
