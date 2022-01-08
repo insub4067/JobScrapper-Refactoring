@@ -1,32 +1,30 @@
 {% extends 'base.html' %} {% block content %}
-<div class="mt-8">
-    <div class="flex justify-between">
-        <div class="my-4" style="font-family: Noto Sans Display">found {{jobs|length}} jobs for {{word}}</div>
-        <a href="/export?word={{word}}">
-            <button class="bg-blue-600 rounded-xl text-white px-4 h-10">Export as CSV</button>
-        </a>
-    </div>
-
-    <table id="table">
-        <thead class="border-b-2 border-gray-800">
-            <tr>
-                <th class="text-left">title</th>
-                <th class="text-left">company</th>
-                <th class="text-left">location</th>
-                <th class="text-left">pay</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for job in jobs %}
-            <tr class="job" link="{{job.link}}">
-                <td class="td">{{job.title}}</td>
-                <td class="td">{{job.company}}</td>
-                <td class="td">{{job.location}}</td>
-                <td class="td">{{job.pay}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<div class="flex justify-between pt-4">
+    <div class="my-4" style="font-family: Noto Sans Display">found {{jobs|length}} jobs for {{word}}</div>
+    <a href="/export?word={{word}}">
+        <button class="csvButton bg-blue-600 rounded-xl text-white px-4 h-10"><span>Export as CSV</span></button>
+    </a>
 </div>
+
+<table id="table">
+    <thead class="border-b-2 border-gray-800">
+        <tr>
+            <th class="text-left title">title</th>
+            <th class="text-left company">company</th>
+            <th class="text-left location">location</th>
+            <th class="text-left pay">pay</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for job in jobs %}
+        <tr class="job" link="{{job.link}}">
+            <td class="td title">{{job.title}}</td>
+            <td class="td company">{{job.company}}</td>
+            <td class="td location">{{job.location}}</td>
+            <td class="td pay">{{job.pay}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock content %}

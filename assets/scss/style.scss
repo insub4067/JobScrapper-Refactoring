@@ -1,5 +1,9 @@
 @tailwind base;
 @tailwind components;
+.wrapper {
+    @apply w-5/6 mx-auto flex flex-col;
+    height: calc(100vh + 6rem);
+}
 .logo {
     @apply text-3xl;
     font-family: 'Spline Sans', sans-serif;
@@ -7,11 +11,32 @@
 .logo-icon {
     @apply text-2xl mx-2 text-blue-600;
 }
+.welcome {
+    @apply text-5xl self-center my-8;
+}
+.nav {
+    @apply fixed h-24 border-b border-gray-400 shadow-md bg-white w-screen flex items-center;
+    .searchWrapper {
+        @apply transition ease-linear duration-200 border absolute mx-auto left-0 right-0 border-gray-400 shadow-md font-normal w-3/12 py-2 flex items-center justify-between rounded-full;
+        &:hover {
+            @apply shadow-lg;
+        }
+        .search {
+            @apply flex justify-between w-full px-4;
+        }
+    }
+}
+.iconWrapper {
+    @apply grid grid-cols-4 mb-24;
+}
 .icons {
-    @apply relative h-48 w-48 transition ease-linear duration-200 flex flex-col items-center mx-4 my-12 justify-self-center border rounded-3xl shadow-lg overflow-hidden;
+    @apply w-11/12 pb-11/12 relative transition ease-linear duration-200 flex flex-col items-center mx-4 my-12 justify-self-center border rounded-3xl shadow-lg overflow-hidden;
     &:hover {
         @apply shadow-2xl;
     }
+}
+.source {
+    @apply flex justify-center items-center mr-6;
 }
 
 .images {
@@ -25,21 +50,63 @@
         @apply opacity-100 text-blue-600;
     }
 }
-.nav {
-    @apply fixed h-24 border border-gray-400 shadow-md bg-white w-screen flex items-center;
-    .searchWrapper {
-        @apply transition ease-linear duration-200 border absolute mx-auto left-0 right-0 border-gray-400 shadow-md font-normal w-3/12 py-2 flex items-center justify-between rounded-full;
-        &:hover {
-            @apply shadow-lg;
-        }
-        .search {
-            @apply flex justify-between w-full px-4;
-        }
-    }
-}
+
 .td {
     @apply border-b border-gray-300;
     font-family: 'Spline Sans', sans-serif;
+}
+
+@media (max-width: 450px) {
+    .wrapper {
+        @apply w-11/12;
+    }
+    .logo {
+        @apply text-3xl;
+        font-family: 'Spline Sans', sans-serif;
+        visibility: hidden;
+    }
+    .logo-icon {
+        @apply text-2xl mx-2 text-blue-600;
+    }
+    .nav {
+        @apply flex justify-between;
+        .searchWrapper {
+            @apply w-3/5 mr-4;
+            .search {
+                @apply;
+            }
+        }
+    }
+    .welcome {
+        @apply text-2xl;
+    }
+    .wrapper {
+        padding-top: 0%;
+    }
+    .source {
+        @apply;
+    }
+    .iconWrapper {
+        @apply grid-cols-3;
+    }
+    .icons {
+        @apply my-6;
+    }
+    .location {
+        display: none;
+    }
+    .pay {
+        display: none;
+    }
+    .csvButton span {
+        display: none;
+    }
+    .csvButton:after {
+        content: 'Download';
+    }
+    .names {
+        font-size: revert;
+    }
 }
 
 @tailwind utilities;
