@@ -1,14 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 <!-- KEYWORDS -->
-<div class="welcome my-8" style="font-family: Noto Sans Display">
+<div class="welcome" style="font-family: Noto Sans Display">
     Are you looking for a job?
 </div>
 {% include 'source.html' %}
 <div class="iconWrapper">
     {% for key in keywords %}
     <a href="search?word={{key.name}}" class="icons">
-        <img src="{{key.img}}" class="images m-6" alt=""></img>
-        <div class="names opacity-20">{{key.name}}</div>
+        <img src="{{key.img}}" class="images" alt=""></img>
+        <div class="names">{{key.name}}</div>
     </a>
     {% endfor %}
 </div>

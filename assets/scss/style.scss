@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 .wrapper {
-    @apply w-5/6 mx-auto flex flex-col;
+    @apply w-5/6 mx-auto flex flex-col z-40;
     height: calc(100vh + 6rem);
 }
 .logo {
@@ -9,13 +9,13 @@
     font-family: 'Spline Sans', sans-serif;
 }
 .logo-icon {
-    @apply text-2xl mx-2 text-blue-600;
+    @apply text-xl mx-2 text-blue-600;
 }
 .welcome {
     @apply text-5xl self-center my-8;
 }
 .nav {
-    @apply fixed h-24 border-b border-gray-400 shadow-md bg-white w-screen flex items-center;
+    @apply fixed h-20 border-b border-gray-400 shadow-md bg-white w-screen flex items-center z-50 opacity-95;
     .searchWrapper {
         @apply transition ease-linear duration-200 border absolute mx-auto left-0 right-0 border-gray-400 shadow-md font-normal w-3/12 py-2 flex items-center justify-between rounded-full;
         &:hover {
@@ -40,11 +40,11 @@
 }
 
 .images {
-    @apply absolute inset-0 z-0 m-auto;
+    @apply absolute inset-0 z-0 m-6;
 }
 
 .names {
-    @apply opacity-0 duration-300 absolute inset-0 z-10 text-center;
+    @apply opacity-20 duration-300 absolute inset-0 z-10 text-center;
     font-family: 'Spline Sans', sans-serif;
     &:hover {
         @apply opacity-100 text-blue-600;
@@ -54,6 +54,10 @@
 .td {
     @apply border-b border-gray-300;
     font-family: 'Spline Sans', sans-serif;
+}
+
+.csvButton {
+    @apply bg-blue-600 rounded-xl text-white px-4 h-10;
 }
 
 @media (max-width: 450px) {
@@ -69,7 +73,7 @@
         @apply text-2xl mx-2 text-blue-600;
     }
     .nav {
-        @apply flex justify-between;
+        @apply flex justify-between h-20;
         .searchWrapper {
             @apply w-3/5 mr-4;
             .search {
