@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, send_file
-from functions import scrap_jobs
+from scrapper import scrap_jobs
 from db import db, keywords
 from export import export
 
