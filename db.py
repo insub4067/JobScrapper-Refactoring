@@ -38,8 +38,8 @@ keywords = [
         "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     },
     {
-        "name": "SocketIO",
-        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg",
+        "name": "Electron",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg",
     },
     {
         "name": "Flask",

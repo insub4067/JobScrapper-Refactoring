@@ -107,8 +107,8 @@ def parse_stackOverflow(soup):
             pay = job.find("ul").find("li", title=True).get_text().strip()
             if pay is None:
                 pay = pay
-        except Exception as e:
-            print("Error : ", e)
+        except Exception:
+            pass
 
         parsed_jobs.append(
             {
@@ -126,19 +126,22 @@ def parse_stackOverflow(soup):
 def scrap_stackOverflow(word):
     url = f"https://stackoverflow.com/jobs?q={word}&r=true"
     soup = get_soup(url)
-    pages = soup.find("div", {"class": "s-pagination"}).find_all("a")[:-1]
     parsed_jobs = []
+    try:
+        pages = soup.find("div", {"class": "s-pagination"}).find_all("a")[:-1]
 
-    for idx, page in enumerate(pages):
-        page = idx + 1
+        for idx, page in enumerate(pages):
+            page = idx + 1
 
-        if page == 1:
-            parsed_jobs = parsed_jobs + parse_stackOverflow(soup)
+            if page == 1:
+                parsed_jobs = parsed_jobs + parse_stackOverflow(soup)
 
-        elif page > 1:
-            url = f"https://stackoverflow.com/jobs?q={word}&pg={page}"
-            soup = get_soup(url)
-            parsed_jobs = parsed_jobs + parse_stackOverflow(soup)
+            elif page > 1:
+                url = f"https://stackoverflow.com/jobs?q={word}&pg={page}"
+                soup = get_soup(url)
+                parsed_jobs = parsed_jobs + parse_stackOverflow(soup)
+    except AttributeError:
+        parsed_jobs = parsed_jobs + parse_stackOverflow(soup)
 
     return parsed_jobs
 
