@@ -41,4 +41,12 @@ keywords = [
         "name": "SocketIO",
         "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg",
     },
+    {
+        "name": "Flask",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
+    },
+    {
+        "name": "NextJS",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg",
+    },
 ]
