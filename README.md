@@ -7,24 +7,40 @@
 ![](https://images.velog.io/images/insub4067/post/96fe3314-3459-4f42-96ce-3abea5c8cd4b/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202022-01-13%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.46.03.png)
 
 > **Explanation**
+<br>
 Scrap remote jobs from three different sites. 
+<br>
 which is 👇👇
+<br>
 ['StackOverflow', 'WeWorkRemotely'. 'RemoteOK']
+<br>
 Show results in table and user can download results as CSV file
 
 > **Used Skills**
+<br>
 backend : Flask
+<br>
 scrap : BeautifulSoup4
+<br>
 requst : aiohttp
+<br>
 css : Tailwind
 
 > **Advanced Features**
+<br>
 **bakcend**
+<br>
 Scrap function codes are written in async.
+<br>
 I could shorten the total amount of time of scrapping.
+<br>
 **frontend**
+<br>
 CSS is designed for both mobile and desktop.
+<br>
 Layout react according to users device screen size.
+<br>
 
 > **URL**
+<br>
 [링크텍스트](https://jobscrapper-refactoring.insub40671.repl.co/)
